@@ -34,7 +34,7 @@ const electorates = [
     { name: "Mississippi", code: "MS", x: 586, y: 404, count: 6 },
     { name: "Missouri", code: "MO", x: 530, y: 284, count: 10 },
     { name: "Montana", code: "MT", x: 266, y: 80, count: 3 },
-    { name: "Nebraska", code: "NE", x: 408, y: 211, count: 5 },
+    { name: "Nebraska", code: "NE", x: 408, y: 216, count: 5 },
     { name: "Nevada", code: "NV", x: 127, y: 228, count: 6 },
     { name: "New Hampshire", code: "NH", x: 0, y: 0, count: 4 },
     { name: "New Jersey", code: "NJ", x: 0, y: 0, count: 14 },
@@ -43,7 +43,7 @@ const electorates = [
     { name: "North Carolina", code: "NC", x: 760, y: 322, count: 15 },
     { name: "North Dakota", code: "ND", x: 409, y: 85, count: 3 },
     { name: "Ohio", code: "OH", x: 690, y: 231, count: 18 },
-    { name: "Oklahoma", code: "OK", x: 452, y: 351, count: 7 },
+    { name: "Oklahoma", code: "OK", x: 452, y: 353, count: 7 },
     { name: "Oregon", code: "OR", x: 86, y: 114, count: 7 },
     { name: "Pennsylvania", code: "PA", x: 776, y: 205, count: 20 },
     { name: "Rhode Island", code: "RI", x: 0, y: 0, count: 4 },
@@ -90,11 +90,15 @@ const Mapp = () => {
 
     const setStateResult = (stateCode, party) => {
         let stateDetails = electorates.find(e => e.code == stateCode);
+        console.log({ stateCode, stateDetails });
+
         let results1 = results.map(r => r);
         results1.find(r => r.code == stateCode)['D'] = 0;
         results1.find(r => r.code == stateCode)['R'] = 0;
         results1.find(r => r.code == stateCode)[party] = stateDetails.count;
         setResults(results1);
+
+        console.log({ results });
 
         let finalD = 0;
         results1.forEach(r => {
@@ -125,15 +129,22 @@ const Mapp = () => {
                         console.log(Date());
                         navigator.clipboard.writeText(`x: ${e.clientX - 20}, y: ${e.clientY - 30}`);
 
+                        let winner = "";
                         let winnerColor = "";
-                        if (pressedKey == "d" || e.ctrlKey) winnerColor = COLORS.DEMOCRAT;
-                        if (pressedKey == "r" || e.altKey) winnerColor = COLORS.REPUBLICAN;
+                        if (pressedKey == "d" || e.ctrlKey) {
+                            winner = "D";
+                            winnerColor = COLORS.DEMOCRAT;
+                        }
+                        if (pressedKey == "r" || e.altKey) {
+                            winner = "R";
+                            winnerColor = COLORS.REPUBLICAN;
+                        }
 
-                        if (winnerColor) {
+                        if (winner) {
                             let newStateColors = JSON.parse(JSON.stringify(stateColors));
                             newStateColors[e.target.dataset.name] = { fill: winnerColor };
                             setStateColors(newStateColors);
-                            setStateResult(e.target.dataset.name, pressedKey.toUpperCase());
+                            setStateResult(e.target.dataset.name, winner);
                         }
                     }}
                 ></USAMap>
@@ -148,7 +159,9 @@ const Mapp = () => {
                     ))
                 }
             </div>
-            <div className="main-div" style={{ width: "32vw", margin: "0 auto", display: "none" }}>
+
+
+            {/* <div className="main-div" style={{ width: "32vw", margin: "0 auto", display: "none" }}>
                 {
                     results.map((e, i) => (
                         <div key={i} style={{
@@ -169,7 +182,9 @@ const Mapp = () => {
                         </div>
                     ))
                 }
-            </div>
+            </div> */}
+
+
             <div className="final-result">
                 <div className="democrat" style={{ backgroundColor: "#fff", color: COLORS.DEMOCRAT }}>
                     {finalDemocrat}
