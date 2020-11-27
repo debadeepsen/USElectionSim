@@ -106,3 +106,8 @@ button {
     padding: 12px;
   }
 }
+
+path:hover {
+  opacity: 0.50;
+  cursor: pointer;
+}
