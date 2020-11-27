@@ -8,5 +8,5 @@ This requires NodeJS and npm to run.
 ## Installation and Running
  - Clone the repository - `git clone https://github.com/debadeepsen/USElectionSim.git`
  - Switch to the folder us-election-react - `cd us-election-react`
- - Install dependencies, if any - `npm i`
+ - Install dependencies - `npm i`
  - Run the application - `npm start`

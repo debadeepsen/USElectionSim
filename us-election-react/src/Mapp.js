@@ -7,57 +7,57 @@ const COLORS = {
 }
 
 const electorates = [
-    { name: "Alabama", abbr: "AL", x: 642, y: 405, count: 9 },
-    { name: "Alaska", abbr: "AK", x: 106, y: 488, count: 3 },
-    { name: "Arizona", abbr: "AZ", x: 187, y: 360, count: 11 },
-    { name: "Arkansas", abbr: "AR", x: 534, y: 368, count: 6 },
-    { name: "California", abbr: "CA", x: 67, y: 273, count: 55 },
-    { name: "Colorado", abbr: "CO", x: 305, y: 266, count: 9 },
-    { name: "Connecticut", abbr: "CT", x: 930, y: 183, count: 7 },
-    { name: "Delaware", abbr: "DE", x: 930, y: 256, count: 3 },
-    { name: "District of Columbia", abbr: "DC", x: 930, y: 270, count: 3 },
-    { name: "Florida", abbr: "FL", x: 754, y: 487, count: 29 },
-    { name: "Georgia", abbr: "GA", x: 701, y: 396, count: 16 },
-    { name: "Hawaii", abbr: "HI", x: 324, y: 560, count: 4 },
-    { name: "Idaho", abbr: "ID", x: 180, y: 135, count: 4 },
-    { name: "Illinois", abbr: "IL", x: 588, y: 246, count: 20 },
-    { name: "Indiana", abbr: "IN", x: 638, y: 241, count: 11 },
-    { name: "Iowa", abbr: "IA", x: 515, y: 206, count: 6 },
-    { name: "Kansas", abbr: "KS", x: 430, y: 283, count: 6 },
-    { name: "Kentucky", abbr: "KY", x: 663, y: 296, count: 8 },
-    { name: "Louisiana", abbr: "LA", x: 538, y: 450, count: 8 },
-    { name: "Maine", abbr: "ME", x: 883, y: 70, count: 4 },
-    { name: "Maryland", abbr: "MD", x: 0, y: 0, count: 10 },
-    { name: "Massachusetts", abbr: "MA", x: 0, y: 0, count: 11 },
-    { name: "Michigan", abbr: "MI", x: 658, y: 175, count: 16 },
-    { name: "Minnesota", abbr: "MN", x: 492, y: 116, count: 10 },
-    { name: "Mississippi", abbr: "MS", x: 586, y: 404, count: 6 },
-    { name: "Missouri", abbr: "MO", x: 530, y: 284, count: 10 },
-    { name: "Montana", abbr: "MT", x: 266, y: 80, count: 3 },
-    { name: "Nebraska", abbr: "NE", x: 408, y: 211, count: 5 },
-    { name: "Nevada", abbr: "NV", x: 127, y: 228, count: 6 },
-    { name: "New Hampshire", abbr: "NH", x: 0, y: 0, count: 4 },
-    { name: "New Jersey", abbr: "NJ", x: 0, y: 0, count: 14 },
-    { name: "New Mexico", abbr: "NM", x: 294, y: 359, count: 5 },
-    { name: "New York", abbr: "NY", x: 809, y: 145, count: 29 },
-    { name: "North Carolina", abbr: "NC", x: 760, y: 322, count: 15 },
-    { name: "North Dakota", abbr: "ND", x: 409, y: 85, count: 3 },
-    { name: "Ohio", abbr: "OH", x: 690, y: 231, count: 18 },
-    { name: "Oklahoma", abbr: "OK", x: 452, y: 351, count: 7 },
-    { name: "Oregon", abbr: "OR", x: 86, y: 114, count: 7 },
-    { name: "Pennsylvania", abbr: "PA", x: 776, y: 205, count: 20 },
-    { name: "Rhode Island", abbr: "RI", x: 0, y: 0, count: 4 },
-    { name: "South Carolina", abbr: "SC", x: 745, y: 362, count: 9 },
-    { name: "South Dakota", abbr: "SD", x: 405, y: 152, count: 3 },
-    { name: "Tennessee", abbr: "TN", x: 638, y: 337, count: 11 },
-    { name: "Texas", abbr: "TX", x: 409, y: 434, count: 38 },
-    { name: "Utah", abbr: "UT", x: 216, y: 245, count: 6 },
-    { name: "Vermont", abbr: "VT", x: 0, y: 0, count: 3 },
-    { name: "Virginia", abbr: "VA", x: 775, y: 276, count: 13 },
-    { name: "Washington", abbr: "WA", x: 113, y: 42, count: 12 },
-    { name: "West Virginia", abbr: "WV", x: 730, y: 265, count: 5 },
-    { name: "Wisconsin", abbr: "WI", x: 569, y: 142, count: 10 },
-    { name: "Wyoming", abbr: "WY", x: 290, y: 171, count: 3 }
+    { name: "Alabama", code: "AL", x: 642, y: 405, count: 9 },
+    { name: "Alaska", code: "AK", x: 106, y: 488, count: 3 },
+    { name: "Arizona", code: "AZ", x: 187, y: 360, count: 11 },
+    { name: "Arkansas", code: "AR", x: 534, y: 368, count: 6 },
+    { name: "California", code: "CA", x: 67, y: 273, count: 55 },
+    { name: "Colorado", code: "CO", x: 305, y: 266, count: 9 },
+    { name: "Connecticut", code: "CT", x: 930, y: 183, count: 7 },
+    { name: "Delaware", code: "DE", x: 930, y: 256, count: 3 },
+    { name: "District of Columbia", code: "DC", x: 930, y: 270, count: 3 },
+    { name: "Florida", code: "FL", x: 754, y: 487, count: 29 },
+    { name: "Georgia", code: "GA", x: 701, y: 396, count: 16 },
+    { name: "Hawaii", code: "HI", x: 324, y: 560, count: 4 },
+    { name: "Idaho", code: "ID", x: 180, y: 135, count: 4 },
+    { name: "Illinois", code: "IL", x: 588, y: 246, count: 20 },
+    { name: "Indiana", code: "IN", x: 638, y: 241, count: 11 },
+    { name: "Iowa", code: "IA", x: 515, y: 206, count: 6 },
+    { name: "Kansas", code: "KS", x: 430, y: 283, count: 6 },
+    { name: "Kentucky", code: "KY", x: 663, y: 296, count: 8 },
+    { name: "Louisiana", code: "LA", x: 538, y: 450, count: 8 },
+    { name: "Maine", code: "ME", x: 883, y: 70, count: 4 },
+    { name: "Maryland", code: "MD", x: 0, y: 0, count: 10 },
+    { name: "Massachusetts", code: "MA", x: 0, y: 0, count: 11 },
+    { name: "Michigan", code: "MI", x: 658, y: 175, count: 16 },
+    { name: "Minnesota", code: "MN", x: 492, y: 116, count: 10 },
+    { name: "Mississippi", code: "MS", x: 586, y: 404, count: 6 },
+    { name: "Missouri", code: "MO", x: 530, y: 284, count: 10 },
+    { name: "Montana", code: "MT", x: 266, y: 80, count: 3 },
+    { name: "Nebraska", code: "NE", x: 408, y: 211, count: 5 },
+    { name: "Nevada", code: "NV", x: 127, y: 228, count: 6 },
+    { name: "New Hampshire", code: "NH", x: 0, y: 0, count: 4 },
+    { name: "New Jersey", code: "NJ", x: 0, y: 0, count: 14 },
+    { name: "New Mexico", code: "NM", x: 294, y: 359, count: 5 },
+    { name: "New York", code: "NY", x: 809, y: 145, count: 29 },
+    { name: "North Carolina", code: "NC", x: 760, y: 322, count: 15 },
+    { name: "North Dakota", code: "ND", x: 409, y: 85, count: 3 },
+    { name: "Ohio", code: "OH", x: 690, y: 231, count: 18 },
+    { name: "Oklahoma", code: "OK", x: 452, y: 351, count: 7 },
+    { name: "Oregon", code: "OR", x: 86, y: 114, count: 7 },
+    { name: "Pennsylvania", code: "PA", x: 776, y: 205, count: 20 },
+    { name: "Rhode Island", code: "RI", x: 0, y: 0, count: 4 },
+    { name: "South Carolina", code: "SC", x: 745, y: 362, count: 9 },
+    { name: "South Dakota", code: "SD", x: 405, y: 152, count: 3 },
+    { name: "Tennessee", code: "TN", x: 638, y: 337, count: 11 },
+    { name: "Texas", code: "TX", x: 409, y: 434, count: 38 },
+    { name: "Utah", code: "UT", x: 216, y: 245, count: 6 },
+    { name: "Vermont", code: "VT", x: 0, y: 0, count: 3 },
+    { name: "Virginia", code: "VA", x: 775, y: 276, count: 13 },
+    { name: "Washington", code: "WA", x: 113, y: 42, count: 12 },
+    { name: "West Virginia", code: "WV", x: 730, y: 265, count: 5 },
+    { name: "Wisconsin", code: "WI", x: 569, y: 142, count: 10 },
+    { name: "Wyoming", code: "WY", x: 290, y: 171, count: 3 }
 ]
 
 const Mapp = () => {
@@ -88,11 +88,12 @@ const Mapp = () => {
         };
     }, []);
 
-    const setStateResult = (state, party) => {
+    const setStateResult = (stateCode, party) => {
+        let stateDetails = electorates.find(e => e.code == stateCode);
         let results1 = results.map(r => r);
-        results1.find(r => r.name == state.name)['D'] = 0;
-        results1.find(r => r.name == state.name)['R'] = 0;
-        results1.find(r => r.name == state.name)[party] = state.count;
+        results1.find(r => r.code == stateCode)['D'] = 0;
+        results1.find(r => r.code == stateCode)['R'] = 0;
+        results1.find(r => r.code == stateCode)[party] = stateDetails.count;
         setResults(results1);
 
         let finalD = 0;
@@ -132,16 +133,17 @@ const Mapp = () => {
                             let newStateColors = JSON.parse(JSON.stringify(stateColors));
                             newStateColors[e.target.dataset.name] = { fill: winnerColor };
                             setStateColors(newStateColors);
+                            setStateResult(e.target.dataset.name, pressedKey.toUpperCase());
                         }
                     }}
                 ></USAMap>
                 {
                     results.map((e, i) => (
-                        <div style={{
+                        <div key={e.code} style={{
                             left: e.x, top: e.y,
                             cursor: "default", pointerEvents: "none", position: "absolute", color: "#fff", border: "0px solid", fontSize: 11
                         }} title={e.name}>
-                            {e.abbr}
+                            {e.code}
                         </div>
                     ))
                 }
@@ -169,10 +171,10 @@ const Mapp = () => {
                 }
             </div>
             <div className="final-result">
-                <div className="democrat" style={{backgroundColor:"#fff", color: COLORS.DEMOCRAT}}>
+                <div className="democrat" style={{ backgroundColor: "#fff", color: COLORS.DEMOCRAT }}>
                     {finalDemocrat}
                 </div>
-                <div className="republican" style={{backgroundColor:"#fff", color: COLORS.REPUBLICAN}}>
+                <div className="republican" style={{ backgroundColor: "#fff", color: COLORS.REPUBLICAN }}>
                     {finalRepublican}
                 </div>
             </div>
