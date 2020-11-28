@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Container from './Container';
 import './index.css';
-import App from './App';
-import Mapp from './Mapp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Mapp />
+    <Container></Container>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -55,7 +55,7 @@ const electorates = [
   { name: "Wyoming", count: 3 }
 ]
 
-const App = () => {
+const MobileApp = () => {
 
   const [results, setResults] = useState([]);
   const [finalDemocrat, setFinalDemocrat] = useState(0);
@@ -136,4 +136,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default MobileApp;

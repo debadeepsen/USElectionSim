@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import USAMap from "react-usa-map";
-import App from "./App";
+import App from "./MobileApp";
 
 const COLORS = {
     REPUBLICAN: "#D81C28",
@@ -61,7 +61,7 @@ const electorates = [
     { name: "Wyoming", code: "WY", x: 290, y: 171, count: 3 }
 ]
 
-const Mapp = () => {
+const DesktopApp = () => {
     const [pressedKey, setPressedKey] = useState("");
     const [results, setResults] = useState([]);
     const [finalDemocrat, setFinalDemocrat] = useState(0);
@@ -165,47 +165,19 @@ const Mapp = () => {
                 }
             </div>
 
-
-            {/* <div className="main-div" style={{ width: "32vw", margin: "0 auto", display: "none" }}>
-                {
-                    results.map((e, i) => (
-                        <div key={i} style={{
-                            display: "flex",
-                            flexDirection: "row",
-                            backgroundColor: (e.D == 0 && e.R == 0) ? "#0000" : (e.D > 0 ? "#1c9eda15" : "#da1c1c15")
-                        }} className="row">
-                            <div style={{
-                                fontWeight: (e.D == 0 && e.R == 0) ? 400 : 600,
-                                color: (e.D == 0 && e.R == 0) ? "#222" : (e.D > 0 ? "#1c9eda" : "#da1c1c"),
-                                paddingTop: 3,
-                                paddingLeft: 3
-                            }}>{e.name}</div>
-                            <div><button className="democrat" title={'Click to set Democratic victory for ' + e.name} onClick={() => setStateResult(e, 'D')}>D</button></div>
-                            <div><button className="republican" title={'Click to set Republican victory for ' + e.name} onClick={() => setStateResult(e, 'R')}>R</button></div>
-                            <div className="D">{e.D}</div>
-                            <div className="R">{e.R}</div>
-                        </div>
-                    ))
-                }
-            </div> */}
-
-
             <div className="final-result">
                 <div className="democrat" style={{ backgroundColor: "#fff", color: COLORS.DEMOCRAT }}>
+                    <i className="las la-democrat"></i>
                     {finalDemocrat}
                 </div>
                 <div className="republican" style={{ backgroundColor: "#fff", color: COLORS.REPUBLICAN }}>
+                    <i className="las la-republican"></i>
                     {finalRepublican}
                 </div>
             </div>
-
-
-            {/* <div style={{ border: "3px solid #444", padding: 10, marginTop: 30, position: "relative" }}>
-                <App />
-            </div> */}
 
         </div>
     );
 }
 
-export default Mapp;
+export default DesktopApp;
