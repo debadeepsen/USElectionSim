@@ -123,7 +123,7 @@ const Mapp = () => {
             <ul style={{ fontWeight: 400, color: "#686868", textAlign: "left", width: "auto", display: "inline-block" }}>
                 <li>Click while pressing 'D' (or Ctrl) to declare Democratic victory for a state</li>
                 <li>Click while pressing 'R' (or Alt) to declare Republican victory for a state</li>
-                <li>The electorate split for Maine (ME) and Nebraska (NE) need to be done manually</li>
+                <li>The electorate splits for Maine (ME) and Nebraska (NE) need to be adjusted manually</li>
             </ul>
             <div style={{ position: "relative", width: 900, border: "0px solid", marginLeft: "auto", marginRight: "auto" }}>
                 <USAMap
