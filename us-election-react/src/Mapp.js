@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import USAMap from "react-usa-map";
+import App from "./App";
 
 const COLORS = {
     REPUBLICAN: "#D81C28",
@@ -13,9 +14,9 @@ const electorates = [
     { name: "Arkansas", code: "AR", x: 534, y: 368, count: 6 },
     { name: "California", code: "CA", x: 67, y: 273, count: 55 },
     { name: "Colorado", code: "CO", x: 305, y: 266, count: 9 },
-    { name: "Connecticut", code: "CT", x: 930, y: 183, count: 7 },
-    { name: "Delaware", code: "DE", x: 930, y: 256, count: 3 },
-    { name: "District of Columbia", code: "DC", x: 930, y: 270, count: 3 },
+    { name: "Connecticut", code: "CT", x: -100000, y: 183, count: 7 },
+    { name: "Delaware", code: "DE", x: -100000, y: 256, count: 3 },
+    { name: "District of Columbia", code: "DC", x: -100000, y: 270, count: 3 },
     { name: "Florida", code: "FL", x: 754, y: 487, count: 29 },
     { name: "Georgia", code: "GA", x: 701, y: 396, count: 16 },
     { name: "Hawaii", code: "HI", x: 324, y: 560, count: 4 },
@@ -27,8 +28,8 @@ const electorates = [
     { name: "Kentucky", code: "KY", x: 663, y: 296, count: 8 },
     { name: "Louisiana", code: "LA", x: 538, y: 450, count: 8 },
     { name: "Maine", code: "ME", x: 883, y: 70, count: 4 },
-    { name: "Maryland", code: "MD", x: 0, y: 0, count: 10 },
-    { name: "Massachusetts", code: "MA", x: 0, y: 0, count: 11 },
+    { name: "Maryland", code: "MD", x: -100000, y: 0, count: 10 },
+    { name: "Massachusetts", code: "MA", x: -100000, y: 0, count: 11 },
     { name: "Michigan", code: "MI", x: 658, y: 175, count: 16 },
     { name: "Minnesota", code: "MN", x: 492, y: 116, count: 10 },
     { name: "Mississippi", code: "MS", x: 586, y: 404, count: 6 },
@@ -36,8 +37,8 @@ const electorates = [
     { name: "Montana", code: "MT", x: 266, y: 80, count: 3 },
     { name: "Nebraska", code: "NE", x: 408, y: 216, count: 5 },
     { name: "Nevada", code: "NV", x: 127, y: 228, count: 6 },
-    { name: "New Hampshire", code: "NH", x: 0, y: 0, count: 4 },
-    { name: "New Jersey", code: "NJ", x: 0, y: 0, count: 14 },
+    { name: "New Hampshire", code: "NH", x: -100000, y: 0, count: 4 },
+    { name: "New Jersey", code: "NJ", x: -100000, y: 0, count: 14 },
     { name: "New Mexico", code: "NM", x: 294, y: 359, count: 5 },
     { name: "New York", code: "NY", x: 809, y: 145, count: 29 },
     { name: "North Carolina", code: "NC", x: 760, y: 322, count: 15 },
@@ -46,13 +47,13 @@ const electorates = [
     { name: "Oklahoma", code: "OK", x: 452, y: 353, count: 7 },
     { name: "Oregon", code: "OR", x: 86, y: 114, count: 7 },
     { name: "Pennsylvania", code: "PA", x: 776, y: 205, count: 20 },
-    { name: "Rhode Island", code: "RI", x: 0, y: 0, count: 4 },
+    { name: "Rhode Island", code: "RI", x: -100000, y: 0, count: 4 },
     { name: "South Carolina", code: "SC", x: 745, y: 362, count: 9 },
     { name: "South Dakota", code: "SD", x: 405, y: 152, count: 3 },
     { name: "Tennessee", code: "TN", x: 638, y: 337, count: 11 },
     { name: "Texas", code: "TX", x: 409, y: 434, count: 38 },
     { name: "Utah", code: "UT", x: 216, y: 245, count: 6 },
-    { name: "Vermont", code: "VT", x: 0, y: 0, count: 3 },
+    { name: "Vermont", code: "VT", x: -100000, y: 0, count: 3 },
     { name: "Virginia", code: "VA", x: 775, y: 276, count: 13 },
     { name: "Washington", code: "WA", x: 113, y: 42, count: 12 },
     { name: "West Virginia", code: "WV", x: 730, y: 265, count: 5 },
@@ -117,10 +118,14 @@ const Mapp = () => {
     return (
         <div style={{ textAlign: "center" }}>
             <h1 style={{
-                fontWeight: 200
+                fontWeight: 200, marginBottom: 0
             }}>United States Presidential Election Results Simulator</h1>
-            <h3 style={{ fontWeight: 200, color: "#555" }}>Click the states while pressing 'D' (or Ctrl), or 'R' (or Alt) to set Democratic or Republican victories for each state, and the result will update itself.</h3>
-            <div style={{ position: "relative", width: 600 }}>
+            <ul style={{ fontWeight: 400, color: "#686868", textAlign: "left", width: "auto", display: "inline-block" }}>
+                <li>Click while pressing 'D' (or Ctrl) to declare Democratic victory for a state</li>
+                <li>Click while pressing 'R' (or Alt) to declare Republican victory for a state</li>
+                <li>The electorate split for Maine (ME) and Nebraska (NE) need to be done manually</li>
+            </ul>
+            <div style={{ position: "relative", width: 900, border: "0px solid", marginLeft: "auto", marginRight: "auto" }}>
                 <USAMap
                     defaultFill="#9a9a9a"
                     customize={stateColors}
@@ -193,6 +198,12 @@ const Mapp = () => {
                     {finalRepublican}
                 </div>
             </div>
+
+
+            {/* <div style={{ border: "3px solid #444", padding: 10, marginTop: 30, position: "relative" }}>
+                <App />
+            </div> */}
+
         </div>
     );
 }

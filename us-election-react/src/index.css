@@ -107,7 +107,11 @@ button {
   }
 }
 
-path:hover {
+path:hover, circle:hover {
   opacity: 0.50;
   cursor: pointer;
 }
+
+/* circle {
+  opacity: 0;
+} */
